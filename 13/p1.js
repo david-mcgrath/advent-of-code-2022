@@ -59,14 +59,14 @@ function getInput(isTest) {
 		: fetch(url).then(res => res.text());
 }
 
-await getInput(true)
+await getInput(false)
 	.then(input => {
 		let packets = input
 			.split("\n\n")
 			.map(x => x
 				.split("\n")
 				.filter(x => x)
-				.map(x => eval(x)));
+				.map(x => JSON.parse(x)));
 				
 		let sum = 0;
 		for (let i = 0; i < packets.length; i++) {
