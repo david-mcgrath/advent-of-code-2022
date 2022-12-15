@@ -111,7 +111,7 @@ let res1 = await getInput()
 				for (let n = 0; n < currRanges.length; n++) {
 					let range = currRanges[n];
 					
-					// if it's within the i range, skip to the end in j and then break.
+					// if it's within the range, skip to the end and then break.
 					if (j >= range.j1 && j <= range.j2) {
 						j = range.j2;
 						failed = true;
@@ -173,7 +173,7 @@ let res2 = await getInput()
 				for (let n = 0; n < currRanges.length; n++) {
 					let range = currRanges[n];
 					
-					// if it's within the i range, skip to the end in j and then break.
+					// if it's within the range, skip to the end and then break.
 					if (y >= range[0] && y <= range[1]) {
 						y = range[1];
 						failed = true;
@@ -186,7 +186,7 @@ let res2 = await getInput()
 			}
 		}
 		
-		// Convert back to XY space, ensure those coordinates are valid, and then return the result
+		// Return the result, no conversion required
 		return valid
 			.map(x => x[0] * 4000000 + x[1])[0];
 	});
